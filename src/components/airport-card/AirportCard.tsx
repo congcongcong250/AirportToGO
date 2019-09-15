@@ -5,11 +5,11 @@ import { resolveCityName } from '../../utils/stringResolver';
 
 interface AirportCardProps {
   detail: AirportEntityModel;
-  onClick?: (airportCode: string) => void;
+  onClick?: (airportCode: string, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 class AirportCard extends React.PureComponent<AirportCardProps> {
   render() {
-    const { detail, onClick } = this.props;
+    const { detail } = this.props;
     return (
       <StyledCard>
         <StyledCardBox>
@@ -31,22 +31,22 @@ class AirportCard extends React.PureComponent<AirportCardProps> {
             </p>
           </StyledCardContent>
         </StyledCardBox>
-        {onClick && this.renderDetailButton()}
+        {this.renderDetailButton()}
       </StyledCard>
     );
   }
 
   private renderDetailButton = () => {
     const { onClick } = this.props;
-    return <StyledDetailButton onClick={this.handleOnDetailClick}>></StyledDetailButton>;
+    return !!onClick && <StyledDetailButton onClick={this.handleOnDetailClick}>></StyledDetailButton>;
   };
 
-  private handleOnDetailClick = () => {
+  private handleOnDetailClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const {
       detail: { airportCode },
       onClick
     } = this.props;
-    onClick && onClick(airportCode);
+    onClick && onClick(airportCode, e);
   };
 }
 
