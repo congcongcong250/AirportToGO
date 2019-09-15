@@ -21,8 +21,8 @@ export interface AirportEntityModel {
     latitudeRadius: number;
     longitude: number;
     longitudeRadius: number;
-    latitudeDirection: LatitudeDirectionEnum;
-    longitudeDirection: LongitudeDirectionEnum;
+    latitudeDirection?: LatitudeDirectionEnum;
+    longitudeDirection?: LongitudeDirectionEnum;
   };
   airportName: string;
   city: {

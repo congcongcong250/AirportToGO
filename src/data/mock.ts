@@ -1,4 +1,6 @@
-const mock = [
+import { AirportEntityModel, LatitudeDirectionEnum, LongitudeDirectionEnum } from './models';
+
+const mock: Array<AirportEntityModel> = [
   {
     airportCode: 'AAA',
     internationalAirport: false,
@@ -12,8 +14,8 @@ const mock = [
       latitudeRadius: -0.304,
       longitude: 145.3,
       longitudeRadius: -2.5395,
-      latitudeDirection: 'S',
-      longitudeDirection: 'W'
+      latitudeDirection: LatitudeDirectionEnum.S,
+      longitudeDirection: LongitudeDirectionEnum.W
     },
     airportName: 'Anaa',
     city: { cityCode: 'AAA', cityName: 'Anaa', timeZoneName: 'Pacific/Tahiti' },
@@ -33,8 +35,8 @@ const mock = [
       latitudeRadius: -0.4669,
       longitude: 141,
       longitudeRadius: 2.4609,
-      latitudeDirection: 'S',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.S,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Arrabury',
     city: { cityCode: 'AAB', cityName: 'Arrabury', timeZoneName: 'Australia/Brisbane' },
@@ -54,8 +56,8 @@ const mock = [
       latitudeRadius: 0.544,
       longitude: 33.5,
       longitudeRadius: 0.5905,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Al Arish',
     city: { cityCode: 'AAC', cityName: 'Al Arish', timeZoneName: 'Africa/Cairo' },
@@ -75,8 +77,8 @@ const mock = [
       latitudeRadius: 0.6426,
       longitude: 7.48,
       longitudeRadius: 0.1361,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Annaba',
     city: { cityCode: 'AAE', cityName: 'Annaba', timeZoneName: 'Africa/Algiers' },
@@ -96,8 +98,8 @@ const mock = [
       latitudeRadius: 0.886,
       longitude: 6.06,
       longitudeRadius: 0.1065,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Aachen',
     city: { cityCode: 'AAH', cityName: 'Aachen', timeZoneName: 'Europe/Berlin' },
@@ -117,8 +119,8 @@ const mock = [
       latitudeRadius: -0.2254,
       longitude: 46.55,
       longitudeRadius: -0.8189,
-      latitudeDirection: 'S',
-      longitudeDirection: 'W'
+      latitudeDirection: LatitudeDirectionEnum.S,
+      longitudeDirection: LongitudeDirectionEnum.W
     },
     airportName: 'Arraias',
     city: { cityCode: 'AAI', cityName: 'Arraias', timeZoneName: 'America/Sao_Paulo' },
@@ -138,8 +140,8 @@ const mock = [
       latitudeRadius: 0.0029,
       longitude: 173.35,
       longitudeRadius: 3.0296,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Aranuka',
     city: { cityCode: 'AAK', cityName: 'Aranuka', timeZoneName: 'Pacific/Auckland' },
@@ -159,8 +161,8 @@ const mock = [
       latitudeRadius: 0.9963,
       longitude: 9.51,
       longitudeRadius: 0.1719,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Aalborg',
     city: { cityCode: 'AAL', cityName: 'Aalborg', timeZoneName: 'Europe/Copenhagen' },
@@ -193,8 +195,8 @@ const mock = [
       latitudeRadius: 0.423,
       longitude: 55.46,
       longitudeRadius: 0.9733,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Al Ain',
     city: { cityCode: 'AAN', cityName: 'Al Ain', timeZoneName: 'Asia/Dubai' },
@@ -214,8 +216,8 @@ const mock = [
       latitudeRadius: 0.1658,
       longitude: 64.28,
       longitudeRadius: -1.1252,
-      latitudeDirection: 'N',
-      longitudeDirection: 'W'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.W
     },
     airportName: 'Anaco',
     city: { cityCode: 'AAO', cityName: 'Anaco', timeZoneName: 'America/Caracas' },
@@ -235,8 +237,8 @@ const mock = [
       latitudeRadius: 0.7837,
       longitude: 37.2,
       longitudeRadius: 0.6516,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Anapa',
     city: { cityCode: 'AAQ', cityName: 'Anapa', timeZoneName: 'Europe/Moscow' },
@@ -256,8 +258,8 @@ const mock = [
       latitudeRadius: 0.9826,
       longitude: 10.15,
       longitudeRadius: 0.1789,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Aarhus',
     city: { cityCode: 'AAR', cityName: 'Aarhus', timeZoneName: 'Europe/Copenhagen' },
@@ -290,8 +292,8 @@ const mock = [
       latitudeRadius: 0.8343,
       longitude: 88.07,
       longitudeRadius: 1.5379,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Altay',
     city: { cityCode: 'AAT', cityName: 'Altay', timeZoneName: 'Asia/Shanghai' },
@@ -311,8 +313,8 @@ const mock = [
       latitudeRadius: -0.2345,
       longitude: 172.35,
       longitudeRadius: -3.0121,
-      latitudeDirection: 'S',
-      longitudeDirection: 'W'
+      latitudeDirection: LatitudeDirectionEnum.S,
+      longitudeDirection: LongitudeDirectionEnum.W
     },
     airportName: 'Asau',
     city: { cityCode: 'AAU', cityName: 'Asau', timeZoneName: 'Pacific/Apia' },
@@ -332,8 +334,8 @@ const mock = [
       latitudeRadius: 0.1193,
       longitude: 124.4,
       longitudeRadius: 2.1758,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Alah',
     city: { cityCode: 'AAV', cityName: 'Alah', timeZoneName: 'Asia/Manila' },
@@ -353,8 +355,8 @@ const mock = [
       latitudeRadius: -0.3424,
       longitude: 46.5,
       longitudeRadius: -0.8174,
-      latitudeDirection: 'S',
-      longitudeDirection: 'W'
+      latitudeDirection: LatitudeDirectionEnum.S,
+      longitudeDirection: LongitudeDirectionEnum.W
     },
     airportName: 'Araxa',
     city: { cityCode: 'AAX', cityName: 'Araxa', timeZoneName: 'America/Sao_Paulo' },
@@ -374,8 +376,8 @@ const mock = [
       latitudeRadius: 0.2827,
       longitude: 52.16,
       longitudeRadius: 0.9122,
-      latitudeDirection: 'N',
-      longitudeDirection: 'E'
+      latitudeDirection: LatitudeDirectionEnum.N,
+      longitudeDirection: LongitudeDirectionEnum.E
     },
     airportName: 'Al Ghaydah',
     city: { cityCode: 'AAY', cityName: 'Al Ghaydah', timeZoneName: 'Asia/Aden' },
