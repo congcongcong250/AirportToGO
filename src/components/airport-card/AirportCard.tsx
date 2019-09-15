@@ -1,27 +1,21 @@
 import * as React from 'react';
+import { StyledCardContent, StyledCardBox, StyledCardTitle } from './styles';
 import { AirportEntityModel } from '../../data/models';
-import styled from 'styled-components';
-
-const StyledCard = styled.div`
-  width: 100%;
-  max-width: 400px;
-  border-radius: 3px;
-`;
+import { resolveCityName } from '../../utils/stringResolver';
 
 interface AirportCardProps {
   detail: AirportEntityModel;
   onClick: Function;
 }
-
 class AirportCard extends React.PureComponent<AirportCardProps> {
   render() {
     const { detail } = this.props;
     return (
-      <StyledCard key={detail.airportCode}>
-        <div>
+      <StyledCardBox key={detail.airportCode}>
+        <StyledCardTitle>
           <h1>{detail.airportName}</h1>
-        </div>
-        <div>
+        </StyledCardTitle>
+        <StyledCardContent>
           <p>
             <span>Country:</span>
             {detail.country.countryName}
@@ -32,10 +26,10 @@ class AirportCard extends React.PureComponent<AirportCardProps> {
           </p>
           <p>
             <span>City:</span>
-            {detail.city.cityName}
+            {resolveCityName(detail.city)}
           </p>
-        </div>
-      </StyledCard>
+        </StyledCardContent>
+      </StyledCardBox>
     );
   }
 }

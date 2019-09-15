@@ -8,6 +8,12 @@ export enum LongitudeDirectionEnum {
   E = 'E'
 }
 
+export interface CityModel {
+  cityCode: string; // possible enum
+  cityName: string;
+  timeZoneName: string;
+}
+
 export interface AirportEntityModel {
   airportCode: string; // possible enum
   internationalAirport: boolean;
@@ -25,11 +31,7 @@ export interface AirportEntityModel {
     longitudeDirection?: LongitudeDirectionEnum;
   };
   airportName: string;
-  city: {
-    cityCode: string; // possible enum
-    cityName: string;
-    timeZoneName: string;
-  };
+  city: CityModel;
   country: {
     countryCode: string; // possible enum
     countryName: string;
