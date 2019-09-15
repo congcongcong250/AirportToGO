@@ -1,5 +1,6 @@
 {
   "prettier.singleQuote": false,
   "editor.formatOnSave": true,
-  "prettier.eslintIntegration": false
+  "prettier.eslintIntegration": false,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -17,7 +17,7 @@
   },
   "baseUrl": "./",
   "paths": {
-    "components": ["src/models"],
+    "components": ["src/components"],
     "data": ["src/data"]
   },
   "include": ["src"]
