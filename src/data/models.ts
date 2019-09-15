@@ -15,7 +15,7 @@ export interface CityModel {
 }
 
 export interface AirportEntityModel {
-  airportCode: string; // possible enum
+  airportCode: string; // possible enum, we treat it as primary key
   internationalAirport: boolean;
   domesticAirport: boolean;
   regionalAirport: boolean;
