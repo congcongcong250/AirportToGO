@@ -20,5 +20,5 @@
     "components": ["src/components"],
     "data": ["src/data"]
   },
-  "include": ["src"]
+  "include": ["src", "api"]
 }
