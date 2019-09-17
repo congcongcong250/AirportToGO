@@ -34,6 +34,13 @@ const airportDetail = handleActions<AirportDetailState, any>(
         data: action.payload.data ? { ...action.payload.data } : null,
         isLoading: false
       };
+    },
+    [FETCH_AIRPORT_DETAIL.ERROR]: (state, action) => {
+      return {
+        data: null,
+        error: action.payload.error,
+        isLoading: false
+      };
     }
   },
   initialState
