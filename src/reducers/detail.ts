@@ -24,7 +24,7 @@ const airportDetail = handleActions<AirportDetailState, any>(
     },
     [SELECT_AIRPORT_DETAIL.SUCCESS]: (state, action) => {
       return {
-        ...state,
+        ...initialState,
         data: action.payload,
         isLoading: false
       };
