@@ -65,12 +65,13 @@ const processReqQuery = (reqQuery: NowRequestQuery) => {
 const handler = async (_req: NowRequest, res: NowResponse) => {
   try {
     const query = processReqQuery(_req.query);
-    const { sortKey = '', order = 'asec', ...filterQuery } = query;
+    const { sortKey = '', order = 'asec', page = 0, ...filterQuery } = query;
     const data = await readFileAsync(dataPath);
     const items: Array<AirportEntityModel> = JSON.parse(data.toString());
     let result = filterAirport(items, filterQuery);
 
     result = sortAirport(result, sortKey, order);
+    result = result.slice(pageNumber * 10, (pageNumber + 1) * 10);
     console.log(result.length);
     res.status(200).send(result);
   } catch (e) {
