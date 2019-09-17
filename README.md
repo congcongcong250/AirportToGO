@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Live demo](https://airporttogo.lirenxn.now.sh)
 
-**Tech:**React, Typscript, styled-component, Storybook, Jest, Enzyme, Now
+**Tech:** React, Typscript, styled-component, Storybook, Jest, Enzyme, Now
 
 ## Getting Started
 
@@ -19,13 +19,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - yarn
 
 ### Installation
-
-> `git clone https://github.com/congcongcong250/AirportToGO.git` > `yarn`
+- `git clone https://github.com/congcongcong250/AirportToGO.git` 
+- `yarn`
 
 ### Running locally
 
-> `yarn now` > `yarn start`
-> Open http://localhost:3006 in any browser
+- `yarn now` 
+- `yarn start`
+- Open http://localhost:3006 in any browser
 
 Frontend app: http://localhost:3006
 Backend api: http://localhost:3000/api
