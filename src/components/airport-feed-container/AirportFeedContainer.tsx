@@ -19,7 +19,7 @@ type Props = AirportFeedContainerProps & ConnectedStateProps & ConnectedDispatch
 class AirportFeedContainer extends React.PureComponent<Props> {
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchAirportFeed({ ['country.countryCode']: 'CN', pageNumber: 0 }));
+    dispatch(fetchAirportFeed({ pageNumber: 0 }));
   }
 
   render() {
