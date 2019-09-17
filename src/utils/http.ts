@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const REACT_APP_TARGET_API = process.env.REACT_APP_TARGET_API;
+const REACT_APP_TARGET_API = '/api';
 
-const REACT_APP_TARGET_MACHINE = `${process.env.REACT_APP_TARGET_MACHINE || location.origin}`;
+const REACT_APP_TARGET_MACHINE = `${process.env.REACT_APP_TARGET_MACHINE || window.location.origin}`;
 
 var http = axios.create({
   baseURL: REACT_APP_TARGET_MACHINE
@@ -25,8 +25,8 @@ export default class Api {
         .get(this.resolveAddress(endpoint), {
           params: query
         })
-        .then((axiosResponseIntercepted: any) => {
-          resolve(axiosResponseIntercepted as T);
+        .then(res => {
+          resolve(res.data);
         })
         .catch(reject);
     });

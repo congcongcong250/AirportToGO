@@ -6,14 +6,12 @@ export interface FetchAirportFeedQueryRequestModel {
   ['country.countryCode']?: string;
   eticketableAirport?: boolean;
 
-  sortKey: string;
-  order: 'asec' | 'desc';
-  pageNumber: 0;
+  sortKey?: string;
+  order?: 'asec' | 'desc';
+  pageNumber: number;
 }
 
 export interface AirportFeedState {
-  selectedRowIndex: number;
-
   items: Array<AirportEntityModel>;
   isLoading: boolean;
   error?: string | null;
@@ -22,8 +20,6 @@ export interface AirportFeedState {
 }
 
 const initialState: AirportFeedState = {
-  selectedRowIndex: 0,
-
   items: [],
   isLoading: false,
   error: null,
@@ -50,10 +46,9 @@ const airportFeed = handleActions<AirportFeedState, any>(
       };
     },
     [FETCH_AIRPORT_FEED.SUCCESS]: (state, action) => {
-      const { items, totalCount, pageNumber } = action.payload!.data;
       return {
         ...state,
-        ...action.payload!.data,
+        items: action.payload!.data,
         isLoading: false,
         error: null
       };

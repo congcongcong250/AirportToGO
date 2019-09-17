@@ -65,7 +65,7 @@ const processReqQuery = (reqQuery: NowRequestQuery) => {
 const handler = async (_req: NowRequest, res: NowResponse) => {
   try {
     const query = processReqQuery(_req.query);
-    const { sortKey = '', order = 'asec', page = 0, ...filterQuery } = query;
+    const { sortKey = '', order = 'asec', pageNumber = 0, ...filterQuery } = query;
     const data = await readFileAsync(dataPath);
     const items: Array<AirportEntityModel> = JSON.parse(data.toString());
     let result = filterAirport(items, filterQuery);
