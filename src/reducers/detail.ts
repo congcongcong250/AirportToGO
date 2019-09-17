@@ -22,6 +22,13 @@ const airportDetail = handleActions<AirportDetailState, any>(
         ...initialState
       };
     },
+    [SELECT_AIRPORT_DETAIL.SUCCESS]: (state, action) => {
+      return {
+        ...state,
+        data: action.payload,
+        isLoading: false
+      };
+    },
     [FETCH_AIRPORT_DETAIL.SUCCESS]: (state, action) => {
       return {
         data: action.payload.data ? { ...action.payload.data } : null,
