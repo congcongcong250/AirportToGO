@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import AirportFeedContainer from './components/airport-feed-container';
+import AirportDetailContainer from './components/airport-detail-container';
 
 export default function AppRouter() {
   return (
-    <Router>
+    <div>
       <div>
         <nav>
           <ul>
@@ -15,8 +16,8 @@ export default function AppRouter() {
         </nav>
 
         <Route path="/feed" exact component={AirportFeedContainer} />
-        {/* <Route path="/feed/" component={About} /> */}
+        <Route path="/feed/:airportCode" exact component={AirportDetailContainer} />
       </div>
-    </Router>
+    </div>
   );
 }

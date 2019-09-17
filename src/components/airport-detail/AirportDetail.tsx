@@ -6,6 +6,7 @@ import Button from '../button';
 
 interface AirportDetailProps {
   detail: AirportEntityModel;
+  onBackClick?: () => void;
 }
 
 class AirportDetail extends React.PureComponent<AirportDetailProps> {
@@ -29,14 +30,15 @@ class AirportDetail extends React.PureComponent<AirportDetailProps> {
             <span>City:</span>
             {resolveCityName(detail.city)}
           </p>
-          <Button onClick={this.navToFeed}>Back to Feed</Button>
+          <Button onClick={this.handleOnBackClick}>Back to Feed</Button>
         </StyledDetailContent>
       </StyledDetailBox>
     );
   }
 
-  private navToFeed = () => {
-    console.log('nav back');
+  private handleOnBackClick = () => {
+    const { onBackClick } = this.props;
+    onBackClick && onBackClick();
   };
 }
 

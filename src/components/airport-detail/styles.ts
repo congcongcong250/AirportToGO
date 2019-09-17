@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { COLORS } from '../../utils/constants';
 
 export const StyledDetailBox = styled.div`
   width: 100%;
