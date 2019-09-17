@@ -20,5 +20,6 @@
     "components": ["src/components"],
     "data": ["src/data"]
   },
-  "include": ["src", "api"]
+  "include": ["src", "api"],
+  "exclude": ["node_modules"]
 }
