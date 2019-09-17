@@ -6,15 +6,44 @@ import { ConnectedDispatchProps } from '../..//store/models';
 import { RouteComponentProps } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import { Store } from '../../reducers';
+import { AirportDetailState } from '../../reducers/detail';
+import { fetchAirportDetail } from '../../actions';
 interface AirportDetailContainerProps extends RouteComponentProps<{ airportCode: string }> {}
 
-interface ConnectedStateProps {}
+interface ConnectedStateProps {
+  detailState: AirportDetailState;
+}
 
 type Props = AirportDetailContainerProps & ConnectedStateProps & ConnectedDispatchProps;
 
 class AirportDetailContainer extends React.PureComponent<Props> {
+  componentDidMount() {
+    const {
+      dispatch,
+      detailState: { data },
+      match: {
+        params: { airportCode }
+      }
+    } = this.props;
+    if (!data) {
+      dispatch(fetchAirportDetail({ airportCode }));
+    }
+  }
+
   render() {
-    return <AirportDetail detail={mock[0]} onBackClick={this.handleOnBackClick} />;
+    const {
+      detailState: { isLoading, error, data }
+    } = this.props;
+    if (isLoading) {
+      return 'Loading...';
+    }
+    if (error) {
+      return <h2>{error}</h2>;
+    }
+    if (!data) {
+      return null;
+    }
+    return <AirportDetail detail={data} onBackClick={this.handleOnBackClick} />;
   }
 
   private handleOnBackClick = () => {
@@ -23,7 +52,7 @@ class AirportDetailContainer extends React.PureComponent<Props> {
 }
 
 const mapStateToProps = (state: Store) => {
-  return {};
+  return { detailState: state.detail };
 };
 
 export default connect<ConnectedStateProps, ConnectedDispatchProps, AirportDetailContainerProps, Store>(mapStateToProps)(AirportDetailContainer);
