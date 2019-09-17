@@ -18,7 +18,7 @@ interface GenericFilterFn<I, K extends keyof any> {
 const readFileAsync = promisify(fs.readFile);
 
 // A generic filter function with type check
-const filterAirport: GenericFilterFn<AirportEntityModel, AirportQueryKeys> = (items, query) => {
+export const filterAirport: GenericFilterFn<AirportEntityModel, AirportQueryKeys> = (items, query) => {
   return items.filter(x => {
     for (let key of Object.keys(query) as Array<keyof typeof query>) {
       // TODO runtine key check, because typescript can not do runtime check
@@ -35,7 +35,7 @@ const filterAirport: GenericFilterFn<AirportEntityModel, AirportQueryKeys> = (it
   });
 };
 
-const sortAirport = (items: Array<AirportEntityModel>, sortKey: string, order: 'asec' | 'desc' = 'asec') => {
+export const sortAirport = (items: Array<AirportEntityModel>, sortKey: string, order: 'asec' | 'desc' = 'asec') => {
   if (!sortKey) {
     return items;
   }
@@ -52,7 +52,7 @@ const sortAirport = (items: Array<AirportEntityModel>, sortKey: string, order: '
 };
 
 // transfer all Array<string> in reqQuery to first string if its Array<string>
-const processReqQuery = (reqQuery: NowRequestQuery) => {
+export const processReqQuery = (reqQuery: NowRequestQuery) => {
   return Object.keys(reqQuery).reduce(
     (acc, key) => {
       acc[key] = Array.isArray(reqQuery[key]) ? reqQuery[key][0] : reqQuery[key];
@@ -71,7 +71,7 @@ const handler = async (_req: NowRequest, res: NowResponse) => {
     let result = filterAirport(items, filterQuery);
 
     result = sortAirport(result, sortKey, order);
-    result = result.slice(pageNumber * 10, (pageNumber + 1) * 10);
+    result = result.slice(Number(pageNumber) * 10, (Number(pageNumber) + 1) * 10);
     console.log(result.length);
     res.status(200).send(result);
   } catch (e) {
