@@ -30,7 +30,7 @@ export function* sagaFetchAirportFeed(action: ReduxAction<FetchAirportFeedQueryR
     });
   } catch (error) {
     yield all([
-      yield put({ type: FETCH_AIRPORT_FEED.ERROR, payload: { error } }) //
+      yield put({ type: FETCH_AIRPORT_FEED.ERROR, payload: { error: error.message } }) //
     ]);
   }
 }
@@ -47,7 +47,7 @@ export function* sagaFetchAirportDetail(action: ReduxAction<{ airportCode: strin
     });
   } catch (error) {
     yield all([
-      yield put({ type: FETCH_AIRPORT_DETAIL.ERROR, payload: { error } }) //
+      yield put({ type: FETCH_AIRPORT_DETAIL.ERROR, payload: { error: error.message } }) //
     ]);
   }
 }
