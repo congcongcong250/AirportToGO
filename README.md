@@ -48,28 +48,51 @@ Backend api: http://localhost:3000/api
 > `yarn storybook`
 > Open http://localhost:9009 in any browser
 
+## Api Lambda
+
+`/api/airports?sortKey=[AIRPORT_MODEL_KEY]&order=['asce'|'desc']&[AIRPORT_MODEL_KEY]=[string|boolean]&pageNumber=[number]`
+
+There is no db connection, the data source is a json file. Api supports sorting, filtering, and pagination based on dynamic keys from the data structure. Nested key filtering ans sorting also supported. e.g. 'country.countryCode', 'location.longitude'. 
+
 ## Folder structure
 
 +- /api
-| holds the lambda functions in typescript
+
+|   holds the lambda functions in typescript
+
 +- /src
+
 | +- /components
+
 | | holds all the components
+
 | +- /store
+
 | | redux configurations and type
+
 | +- /actions
+
 | | redux actions
+
 | +- /reducers
+
 | | redux reducers
+
 | +- /sagas
+
 | | redux-sagas side effects
+
 | +- /utils
+
 | | utility functions
+
 | +- /stories
+
 | | storybook stories
+
 | +- /**tests**
 all the tests
 
 ## Deployment
 
-This project is deployed on zeit using typescript lambdas as backend.
+This project is deployed on zeit using typescript lambdas as backend. It run `yarn build` automatically so no build script is really needed. The deployment is connected to github master update.
