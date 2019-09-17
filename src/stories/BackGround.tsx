@@ -10,13 +10,13 @@ class BackGround extends React.PureComponent<BackGroundProps> {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, mode } = this.props;
     return (
       <div
         style={{
           width: '100%',
           height: '100%',
-          backgroundColor: COLORS.background,
+          backgroundColor: mode === 'grey' ? COLORS.background : 'white',
           padding: 20,
           boxSizing: 'border-box'
         }}

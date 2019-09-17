@@ -7,4 +7,4 @@ export default {
   title: 'AirportDetail'
 };
 
-export const Card = () => <AirportDetail detail={mock[0]} />;
+export const Detail = () => <AirportDetail detail={mock[0]} onBackClick={action('clicked')} />;
