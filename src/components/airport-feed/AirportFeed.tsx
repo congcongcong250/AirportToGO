@@ -5,6 +5,7 @@ import AirportCard from '../airport-card';
 
 interface AirportFeedProps {
   feed: Array<AirportEntityModel>;
+  onSelectAirport?: (airportCode: string, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 class AirportFeed extends React.PureComponent<AirportFeedProps> {
@@ -20,7 +21,8 @@ class AirportFeed extends React.PureComponent<AirportFeedProps> {
   };
 
   private handleOnAirportClick = (airportCode: string, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log('click on', airportCode);
+    const { onSelectAirport } = this.props;
+    onSelectAirport && onSelectAirport(airportCode, e);
   };
 }
 
