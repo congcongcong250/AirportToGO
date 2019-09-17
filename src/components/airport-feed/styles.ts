@@ -7,9 +7,10 @@ export const StyledFeed = styled.div`
   width: 100%;
   height: 100%;
   padding: 20px;
-  backgroundcolor: ${COLORS.background};
+  background-color: ${COLORS.background};
   display: flex;
   flex-direction: column;
+  align-items: center;
   ${StyledCard} {
     margin-bottom: 20px;
   }

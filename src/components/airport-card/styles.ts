@@ -19,6 +19,9 @@ export const StyledCardBox = styled.div`
   display: flex;
   padding: 20px;
   flex-grow: 1;
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
 `;
 
 export const StyledCardTitle = styled.div`
@@ -26,6 +29,13 @@ export const StyledCardTitle = styled.div`
   margin-right: 20px;
   padding-right: 20px;
   border-right: 1px solid ${COLORS.background};
+  @media (max-width: 768px) {
+    margin-right: 10px;
+    padding-right: 10px;
+    h1 {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const StyledCardContent = styled.div`
@@ -35,7 +45,10 @@ export const StyledCardContent = styled.div`
     font-size: 0.85em;
   }
   @media (max-width: 768px) {
-    height: 50px;
+    p {
+      margin: 0px 0px 3px 0px;
+      font-size: 10px;
+    }
   }
 `;
 
