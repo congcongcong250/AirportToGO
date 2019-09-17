@@ -9,7 +9,7 @@ const dataPath = join(__dirname, 'data.json');
 
 type FilterQueryModel<K extends keyof any> = Partial<Record<K, any>>;
 
-type AirportQueryKeys = 'country.countryCode' | 'country.countryName' | 'onlineIndicator';
+type AirportQueryKeys = 'country.countryCode' | 'eticketableAirport' | 'onlineIndicator';
 
 interface GenericFilterFn<I, K extends keyof any> {
   (items: Array<I>, query: FilterQueryModel<K>): Array<I>;
