@@ -48,7 +48,7 @@ export const StyledDetailButton = styled.button`
   font-size: 30px;
   flex-basis: 15%;
   :hover {
-    transition: background-color 0.35s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
     cursor: pointer;
     background-color: ${COLORS.lightGrey};
   }
