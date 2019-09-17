@@ -8,3 +8,6 @@ export const COLORS = {
   main: '#e40000',
   lightRed: '#fb4545'
 };
+
+export const ERROR = 'ERROR';
+export const SUCCESS = 'SUCCESS';
