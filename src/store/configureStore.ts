@@ -12,7 +12,7 @@ const configureStore = (preloadedState: any, history: History) => {
   const sagaMiddleware = createSagaMiddleware();
   // For initialize Redux DevTools Extension
   const composeEnhancers = (process.env.NODE_ENV === 'development' //
-  && window && (<any> window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose; // prettier-ignore
+  && window && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose; // prettier-ignore
   const store = createStore(rootReducer, preloadedState, composeEnhancers(applyMiddleware(sagaMiddleware, historyMiddleware)));
 
   if (module.hot) {

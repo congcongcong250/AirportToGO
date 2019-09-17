@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import AirportFeedContainer from './components/airport-feed-container';
 import AirportDetailContainer from './components/airport-detail-container';
 
