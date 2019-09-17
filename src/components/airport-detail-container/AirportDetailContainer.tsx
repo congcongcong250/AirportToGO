@@ -35,7 +35,7 @@ class AirportDetailContainer extends React.PureComponent<Props> {
       detailState: { isLoading, error, data }
     } = this.props;
     if (isLoading) {
-      return 'Loading...';
+      return <h1>Loading...</h1>;
     }
     if (error) {
       return <h2>{error}</h2>;
