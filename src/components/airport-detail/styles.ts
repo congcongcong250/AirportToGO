@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../../utils/constants';
 
 export const StyledDetailBox = styled.div`
   width: 100%;
@@ -13,7 +14,17 @@ export const StyledDetailTitle = styled.div`
 `;
 
 export const StyledDetailContent = styled.div`
-  flex-basis: 30%;
   margin: 20px;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+export const StyledBox = styled.div`
+  margin: 10px;
+  padding: 10px;
+  border: 1px ${COLORS.black} solid;
+  border-radius: 5px;
+  width: 300px;
 `;
