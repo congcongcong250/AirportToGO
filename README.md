@@ -56,42 +56,25 @@ There is no db connection, the data source is a json file. Api supports sorting,
 
 ## Folder structure
 
-+- /api
-
-|   holds the lambda functions in typescript
++- /api    // holds the lambda functions in typescript
 
 +- /src
 
-| +- /components
+--+- /components // holds all the components
 
-| | holds all the components
+--+- /store     // redux configurations and type
 
-| +- /store
+--+- /actions   // redux actions
 
-| | redux configurations and type
+--+- /reducers  // redux reducers
 
-| +- /actions
+--+- /sagas     // redux-sagas side effects
 
-| | redux actions
+--+- /utils     // utility functions
 
-| +- /reducers
+--+- /stories   // storybook stories
 
-| | redux reducers
-
-| +- /sagas
-
-| | redux-sagas side effects
-
-| +- /utils
-
-| | utility functions
-
-| +- /stories
-
-| | storybook stories
-
-| +- /**tests**
-all the tests
+--+- /**tests** // all the tests
 
 ## Deployment
 
